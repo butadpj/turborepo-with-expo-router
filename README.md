@@ -11,7 +11,7 @@
 ### Used this [expo-router docs](https://docs.expo.dev/routing/installation/#quick-start) as a guide
 
 - Run `npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar react-native-gesture-handler`
-- Run `yarn install` from project's root
+- Re-install dependencies again from project's root
 - Remove `index.js`'s content and replace it with `import "expo-router/entry";`. See [working with monorepos guide](https://docs.expo.dev/guides/monorepos/)
 - Set `"scheme": "turborepo-with-expo-router"` in `app.json` (Replace the schema with whatever you like)
 - Add `plugins: ["expo-router/babel"],` in `babel.config.js`
