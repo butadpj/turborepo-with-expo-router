@@ -1,32 +1,19 @@
-# Turborepo react-native starter
+## Steps taken after starting the project with `npx create-turbo@latest -e with-react-native-web`
 
-This is an official starter Turborepo.
+- Select `yarn workspace`
+- Update expo version to `~49.0.7`
+- Run `sudo npx expo install --check`, then fix the dependencies
 
-## Using this example
+- At this point, the project can be successfuly run without any errors. We can now proceed and add `expo-router` 👇
 
-Run the following command:
+---
 
-```sh
-npx create-turbo@latest -e with-react-native-web
-```
+### Used this [expo-router docs](https://docs.expo.dev/routing/installation/#quick-start) as a guide
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `native`: a [react-native](https://reactnative.dev/) app built with [expo](https://docs.expo.dev/)
-- `web`: a [Next.js](https://nextjs.org/) app built with [react-native-web](https://necolas.github.io/react-native-web/)
-- `ui`: a stub [react-native](https://reactnative.dev/) component library shared by both `web` and `native` applications
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [Expo](https://docs.expo.dev/) for native development
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [Prettier](https://prettier.io) for code formatting
+- Run `npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar react-native-gesture-handler`
+- Run `yarn install` from project's root
+- Remove `index.js`'s content and replace it with `import "expo-router/entry";`. See [working with monorepos guide](https://docs.expo.dev/guides/monorepos/)
+- Set `"scheme": "turborepo-with-expo-router"` in `app.json` (Replace the schema with whatever you like)
+- Add `plugins: ["expo-router/babel"],` in `babel.config.js`
+- Create `.env` file and add `EXPO_USE_METRO_WORKSPACE_ROOT=1`
+- Finally, remove `App.tsx` and start creating the first page in `/app`
