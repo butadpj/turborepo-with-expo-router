@@ -15,5 +15,13 @@
 - Remove `index.js`'s content and replace it with `import "expo-router/entry";`. See [working with monorepos guide](https://docs.expo.dev/guides/monorepos/)
 - Set `"scheme": "turborepo-with-expo-router"` in `app.json` (Replace the schema with whatever you like)
 - Add `plugins: ["expo-router/babel"],` in `babel.config.js`
+- Enable developing for web
+
+  ```javascript
+  "web": {
+    "bundler": "metro",
+  },
+  ```
+
 - Create `.env` file and add `EXPO_USE_METRO_WORKSPACE_ROOT=1`
 - Finally, remove `App.tsx` and start creating the first page in `/app`
