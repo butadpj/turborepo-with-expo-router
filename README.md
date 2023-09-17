@@ -1,6 +1,6 @@
 ## Steps taken after starting the project with `npx create-turbo@latest -e with-react-native-web`
 
-- Select `yarn workspace`
+- Select `yarn workspace` (it could be whatever you want)
 - Update expo version to `~49.0.7`
 - Run `sudo npx expo install --check`, then fix the dependencies
 
