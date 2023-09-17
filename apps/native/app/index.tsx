@@ -1,15 +1,19 @@
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { useNavigation } from "expo-router";
 import { Button } from "ui";
 
 export default function Native() {
+  const { navigate } = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Native</Text>
       <Button
         onClick={() => {
           console.log("Pressed!");
-          alert("Pressed!");
+          // alert("Pressed!");
+          navigate("home");
         }}
         text="HEY"
       />
